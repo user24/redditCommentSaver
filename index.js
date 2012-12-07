@@ -4,7 +4,6 @@ var http = require('http');
 var verbose = true;
 
 function getComments(username, callback, after) {
-  // Stored the comments
 	var comments = '';
 	// Define the URL to fetch
 	var redditUrl = "http://www.reddit.com/user/"+username+".json";
@@ -46,5 +45,6 @@ function getComments(username, callback, after) {
 getComments("user24", saveCommentsToCouch);
 
 function saveCommentsToCouch(comments) {
+	// Stored the comments
 	console.log('Saving ' + comments.data.children.length + ' comments to couch');
 }
